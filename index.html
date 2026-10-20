@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slides App - Assignment 04</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h2>My Markdown Slides</h2>
+        <button id="saveBtn" onclick="saveSlides()">Save Slides (Ctrl+S)</button>
+        <button id="clearBtn" onclick="newPresentation()">Create New</button>
+        <span id="saveMsg"></span>
+    </div>
+
+    <div class="main-container">
+        <!-- Section 1: Coding the MD file -->
+        <div class="editor-section" id="editorBox">
+            <h3>Write Markdown Here</h3>
+            <textarea id="mdInput" oninput="updateSlides()"></textarea>
+        </div>
+
+        <!-- Section 2: Viewing realtime changes -->
+        <div class="viewer-section" id="viewerBox">
+            <h3>Slide Preview</h3>
+            
+            <div class="slide-screen" id="slideScreen">
+                <div id="slideContent"></div>
+
+                <div class="bottom-bar">
+                    <div class="slide-count" id="slideCount">1 / 1</div>
+                    <div class="controls">
+                        <button id="leftBtn" onclick="prevSlide()">Left</button>
+                        <button id="rightBtn" onclick="nextSlide()">Right</button>
+                        <button id="fullScreenBtn" onclick="toggleFullScreen()">Full Screen</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
